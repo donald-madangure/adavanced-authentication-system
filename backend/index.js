@@ -5,7 +5,7 @@ import cors from 'cors';
 
 import path from 'path'; //for deployment
 
-import {connectDB} from './db/connectDb.js';
+import {connectDB} from './db/connectDB.js';
 
 import authRoutes from './routes/auth.route.js';
 
