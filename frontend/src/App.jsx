@@ -46,7 +46,7 @@ const App = () => {
 
   return (
     <div className='min-h-screen bg-gradient-to-br
-    from-gray-600 via-lime-900 to-gray-600 flex items-center justify-center relative overflow-hidden'> 
+    from-gray-600 via-blue-900 to-gray-600 flex items-center justify-center relative overflow-hidden'> 
       <RainingBackground dropCount={100} />    
 
       <Routes>
