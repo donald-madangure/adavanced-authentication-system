@@ -5,7 +5,7 @@ const Raindrop = ({ delay, duration, xPos }) => {
   return (
     <motion.div
       initial={{ y: '-10vh', opacity: 0 }}
-      animate={{ y: ['-10vh', '110vh'], opacity: [0, 0.07, 0.07] }}
+      animate={{ y: ['-10vh', '110vh'], opacity: [0, 0.05, 0.05] }}
       transition={{
         duration,
         repeat: Infinity,
