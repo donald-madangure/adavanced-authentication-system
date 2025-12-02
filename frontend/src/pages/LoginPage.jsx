@@ -70,7 +70,7 @@ const LoginPage = () => {
             </p>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form noValidate onSubmit={handleLogin} className="space-y-6">
             
             <div className="space-y-4">
                 <Input

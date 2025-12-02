@@ -81,7 +81,7 @@ const SignUpPage = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSignUp} className="space-y-6">
+          <form noValidate onSubmit={handleSignUp} className="space-y-6">
             
             <div className="space-y-4">
                 <Input

@@ -10,7 +10,18 @@ export const signup = async (req, res) => {
     try {
         if (!email || !password || !name) {
             throw new Error('All fields are required');
-        }
+        } 
+        
+        const validateEmail = (email) => {
+         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+               return regex.test(email);
+            };
+        if (!validateEmail(email)) {
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid email format'
+            });
+        }        
 
        const nameExists = await User.findOne({ name });
        if (nameExists) {    
