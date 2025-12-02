@@ -34,6 +34,10 @@ export const useAuthStore = create((set) => ({
         }  
     }, 
 
+    clearError: async () => {
+        set({ error: null });
+    },
+
     verifyEmail: async (token) => {
         set({ isLoading: true, error: null })
         try {
@@ -99,3 +103,4 @@ export const useAuthStore = create((set) => ({
 	}
 
 }))
+

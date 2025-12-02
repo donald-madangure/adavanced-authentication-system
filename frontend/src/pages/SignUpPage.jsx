@@ -7,14 +7,17 @@ import { useState } from 'react'
 import PasswordStrengthMeter from '../components/PasswordStrengthMeter'
 import { useAuthStore } from '../store/authStore'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+
+
 
 const SignUpPage = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const navigate = useNavigate()
+  const navigate = useNavigate()  
 
-  const { signup, error, isLoading } = useAuthStore()
+  const { signup, error, isLoading, clearError } = useAuthStore()
 
   const handleSignUp = async (e) => {
     e.preventDefault()
@@ -25,6 +28,10 @@ const SignUpPage = () => {
       console.log('Sign-up error:', error)
     }
   }
+
+  useEffect(() => {
+  clearError();
+}, [clearError]);
 
   return (
     <div className="min-h-screen flex bg-gray-900 text-white overflow-hidden">

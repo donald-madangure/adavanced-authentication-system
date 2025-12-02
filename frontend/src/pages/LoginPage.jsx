@@ -5,17 +5,22 @@ import { Mail, Lock, Loader, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Input from "../components/Input"
 import { useAuthStore } from "../store/authStore"
+import { useEffect } from 'react'
 
 const LoginPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { login, isLoading, error } = useAuthStore()
+  const { login, isLoading, error, clearError } = useAuthStore()
 
   const handleLogin = async (e) => {
     e.preventDefault()
     await login(email, password)
   }
+
+  useEffect(() => {
+  clearError();
+}, [clearError]);
 
   return (
     <div className="min-h-screen flex bg-gray-900 text-white overflow-hidden">
